@@ -11,7 +11,7 @@
         <nav class="nav-wrapper">
             <ul class="nav-list">
                 <li class="home-button"> <a href="index.html"> <img src="assets/images/navigation/home-page-logo.png" width="300px" id="home-button-icon" alt="Home Button"></a> </li>
-                <li class="quiz-button"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
+                <li class="quiz-button" id="play-quiz"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
                 <li class="play-button"><a href="play.html"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></a></li>
             </ul>
         </nav>
@@ -25,16 +25,37 @@
         </div>
         <div class="stat">
             <img src="assets/images/navigation/lumi-points.png" alt="Lumi Points">
-              <span id="points">50</span>
+              <span id="lumiPoints">50</span>
+        </div>
+        <div class="stat">
+            <img src="assets/images/navigation/streak-icon.png" alt="Winning Streak">
+              <span id="streak-points">0</span>
+
+        </div>
+        <div class="stat">
+            <img src="assets/images/navigation/correct-answers.png" alt="Correct Answers">
+              <span id="correct-answers">0</span>
+
+        </div>
+        <div class="stat">
+            <img src="assets/images/navigation/mystery-box.png" alt="Mystery Box">
+              <span id="collect-clicks">0</span>
+
         </div>
         </div>
+        
+
+        </div>
+
+        
+
         <h1 class="top-title">Meet The LumiVerse</h1>
 
         
 
         <section class="intro-heroes">
             <h2 class="tutorial-title">Tutorial :</h2>
-            <p class="info-heroes">Each team consists of 5 heroes. <br> Every team has 2 <span class="rare"><b>"Rare"</b></span>, 2 <span class="epic"><b>"Epic"</b></span> and 1 <span class="legendary"><b>"Legendary"</b></span> Hero. <br> Our <span class="legendary"><b>"Legendary"</b></span> Heroes are the <span class="leaders"><b>"Leaders"</b></span> of each Team. We dont have any <b>"Common"</b>, <b>"Mythical"</b>,<b> "Ancient"</b> or <b>"God-Like"</b> heroes so far! <br>(Keep Track On The Info For The Quiz To Accumulate <span class="lumipoints-color"><b>"LumiPoins"</b></span> and Unlock <span class="epic"><b>"Epic"</b></span> and <span class="legendary"><b>"Legendary"</b></span> Heroes xD) </p>
+            <p class="info-heroes">Each team consists of 5 heroes. <br> Every team has 2 <span class="rare"><b>"Rare"</b></span>, 2 <span class="epic"><b>"Epic"</b></span> and 1 <span class="legendary"><b>"Legendary"</b></span> Hero. <br> Our <span class="legendary"><b>"Legendary"</b></span> Heroes are the <span class="leaders"><b>"Leaders"</b></span> for each Team. We dont have any <b>"Common"</b>, <b>"Mythical"</b>,<b> "Ancient"</b> or <b>"God-Like"</b> heroes so far! <br>(Keep Track On The Info For The Quiz To Accumulate <span class="lumipoints-color"><b>"LumiPoins"</b></span> and Unlock <span class="epic"><b>"Epic"</b></span> and <span class="legendary"><b>"Legendary"</b></span> Heroes xD) </p>
             
             <h3>Question Stracture</h3>
             <ul>
@@ -57,13 +78,37 @@
                 <li>Otherwise start with Rare Hero</li>
             </ul>
 
-            <button id="start-quiz">Lets Quiz</button>
+            <button id="start-quiz">Lets Quiz </button>
+            <section>
+
+        <div id="quiz">
+            <h2 id="questionText">LumiVerse Series QuizGame</h2>
+
+            <div id="answers">
+                <button class="answerBtn">is it A?</button>
+                <button class="answerBtn">maybe B?</button>
+                <button class="answerBtn">hmmm</button>
+                <!-- <button id="bonus">lets see</button> -->
+            </div>
+        </div>
+
             
+
+
+
+
+
+
+
+
 
 
         </section>
 
-        
+
+        </section>
+
+        <div class="lumiverse-wrapper">
 
         <section class="lumisquad-wrapper">
             <h2>Heroes - The LumiSquad(Light)</h2>
@@ -76,6 +121,8 @@
             
             
             </p>
+
+            <img src="assets/images/characters/lumi-squad/lumi-team.png" alt="LumiSquad Team Heroes" id="lumi-team-image" onclick="this.requestFullscreen()">
 
 
         </section>
@@ -92,6 +139,8 @@
             
             </p>
 
+            <img src="assets/images/characters/dark-squad/grim-team.png" alt="GrimLight Team Heroes" id="grim-team-image" onclick="this.requestFullscreen()">
+
         </section>
 
         <section class="thevoidchoir-wrapper">
@@ -106,20 +155,11 @@
             
             </p>
 
+            <img src="assets/images/characters/void-squad/the-void-choir.png" alt="The Void Choir Team Heroes" id="void-team-image" onclick="this.requestFullscreen()" >
+
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+        
 
 
 

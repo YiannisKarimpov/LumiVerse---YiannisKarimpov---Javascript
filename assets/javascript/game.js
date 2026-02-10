@@ -1,24 +1,46 @@
 
+// --------------GLOBAL STATE -------------- //
 
 
+let lives = 3;
+let correctStreak = 0;
+let stage = 1;
 
-let lives = [3];
+let lumiPoints = 50;
 
-let LumiPoints = [50];
+let currentStageQuestions = [];
+let currentQuestionIndex = 0;
+let currentQuestion = null;
 
-let gameState = {
+const gameState = {
+    mode: "quiz",
     lives: 3,
-    lumiPoints: 50
-}
+    lumiPoints: 50,
+    correctStreak: 0,
+    correctAnswer: 0
+};
+
+const maxLives = 6;
+
+
+// ----------------UI FUNCTION ------------------//
 
 function updateHUD() {
     document.getElementById("lives").textContent = gameState.lives;
-    document.getElementById("points").textContent = gameState.points;
+    document.getElementById("lumiPoints").textContent = gameState.lumiPoints;
+    document.getElementById("streak-points").textContent = gameState.correctStreak;
+    document.getElementById("correct-answers").textContent = gameState.correctAnswer;
+    document.getElementById("collect-clicks").textContent = gameState.count
+    
 }
 
-document.getElementById("start-quiz").onclick = function () {
-    alert ("Lets LumiQuiz!");
-};
+// -----------START QUIZ BUTTON------------------//
+
+document.getElementById("start-quiz").addEventListener("click", () => {
+      startStage("stage1");
+    });
+
+// ---------------QUESTIONS POOL---------------- //
 
 let quizData = {
     stage1: [
@@ -146,7 +168,7 @@ let quizData = {
       id: 21,
       question: "Khalvex’s title suggests?",
       answers: ["Peace", "War", "Knowledge"],
-      correct: 
+      correct: 1
     },
     {
       id: 22,
@@ -420,6 +442,258 @@ let quizData = {
     }   
     ]
 }
+
+
+// --------------- STAGE FUNCTIONS --------------- //
+
+
+
+function shuffleQuestions(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+
+function getStageQuestions(stageKey, count) {
+  return shuffleQuestions([...quizData[stageKey]]).slice(0, count);
+}
+
+function startStage(stageKey) {
+
+  console.log("stageKey:", stageKey);
+  console.log("quizData[stageKey]:", quizData[stageKey]);
+  
+    currentStageQuestions = getStageQuestions(stageKey, 10);
+    currentQuestionIndex = 0;
+    showQuestion();
+}
+
+
+    const stage1Questions = getStageQuestions("stage1", 10);
+    const stage2Questions = getStageQuestions("stage2", 10);
+    const stage3Questions = getStageQuestions("stage3", 10);
+
+
+    // ---------QUESTION FUNCTIONS----------//
+function showQuestion() {
+    currentQuestion = currentStageQuestions[currentQuestionIndex];
+
+
+    if (!currentQuestion) {
+      console.error("Question undefined at index", currentQuestionIndex);
+      return;
+    }
+
+    document.getElementById("questionText").textContent = currentQuestion.question;
+
+    const buttons = document.querySelectorAll(".answerBtn");
+    
+    buttons.forEach((btn,index) => {
+        btn.textContent = currentQuestion.answers[index];
+        btn.disabled = false;
+    });
+}
+
+function nextQuestion() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex >= currentStageQuestions.length) {
+    alert("Stage Complete!");
+    return;
+  }
+
+  showQuestion();
+}
+
+
+// ------------GAME OVER FUNCTIONS--------------//
+function gameOver() {
+  if (gameState.lives === 0) {
+    alert("Game Over Better Luck Next Time!")
+  };
+}
+// -----------ANSWER FUNCTIONS--------------//
+
+
+
+
+function addCorrectAnswer() {
+  gameState.correctAnswer++;
+  addExtraLP();
+  updateHUD();
+}
+
+function correctAnswer() {
+    gameState.correctStreak++;
+    addCorrectAnswer();
+    addLP(10);
+    updateHUD();
+}
+
+function wrongAnswer() {
+    gameState.correctStreak--;
+    loseLife();
+    updateHUD();
+}
+
+
+
+
+function selectAnswer(selectedIndex, buttonEl) {
+  const isCorrect = selectedIndex === currentQuestion.correct;
+
+  if (isCorrect) {
+    correctAnswer();
+  
+  } else {
+    wrongAnswer();
+    
+  }
+
+  disableAllButtons();
+
+  setTimeout(nextQuestion, 800);
+}
+
+
+function disableAllButtons() {
+  document.querySelectorAll(".answerBtn").forEach(btn => {
+    btn.disabled = true;
+  })
+}
+
+const answerButtons = document.querySelectorAll(".answerBtn");
+
+answerButtons.forEach((btn, index) => {
+  btn.addEventListener("click", () => selectAnswer(index, btn));
+});
+
+
+ 
+
+
+
+
+
+// QUIZ HUD LIVES LUMIPOINTS STREAK FUNCTIONS //
+
+
+
+// ----------LP FUNCTIONS---------//
+function setLP(amount) {
+    gameState.lumiPoints = amount;
+    updateHUD();
+}
+
+function addLP (amount) {
+    gameState.lumiPoints += amount;
+    updateHUD();
+}
+
+function addExtraLP() {
+  if (gameState.correctAnswer === 15)
+    addLP(300);
+  else if (gameState.correctAnswer === 30)
+    addLP (1000);
+}
+
+function addLPwhenMaxLives() {
+    if (gameState.lives > maxLives) 
+      addLP(50);
+    
+}
+
+
+
+
+// -------------LIFES FUNCTIONS------------//
+
+
+function setLives(amount) {
+    gameState.lives = amount;
+    updateHUD();
+}
+
+function addLife () {
+    gameState.lives++;
+    if (gameState.lives >= maxLives)
+      addLPwhenMaxLives();
+      updateHUD();
+    
+}
+
+function loseLife () {
+    gameState.lives--;
+    if (gameState.lives < 0) gameState.lives = 0;
+    gameOver();
+    updateHUD();
+}
+
+function extraLife() {
+    if (gameState.correctStreak === 3)
+        addLife();
+    else if (gameState.correctStreak === 6)
+        addLife();
+    else if (gameState.correctStreak === 9)
+        addLife();
+    else if (gameState.correctStreak === 12)
+        addLife();
+    else if (gameState.correctStreak === 15)
+        addLife();
+    else if (gameState.correctStreak === 18)
+        addLife();
+    else if (gameState.correctStreak === 21)
+        addLife();
+    else if (gameState.correctStreak === 24)
+        addLife();
+    else if (gameState.correctStreak === 27)
+        addLife();
+    else if (gameState.correctStreak === 30)
+        addLife();       
+}
+
+
+
+
+//------------ STREAK FUNCTIONS -----------//
+function streakCounter() {
+    gameState.streakCounter = 0;
+    
+}
+
+function setStreak(amount) {
+    gameState.correctStreak = amount;
+    updateHUD();
+}
+
+function addStreakPts() {
+    gameState.correctStreak++;
+    extraLife ();
+    addExtraLP();
+    updateHUD();
+}
+
+function loseStreakPts() {
+    gameState.correctStreak--;
+    updateHUD();
+}
+
+
+// let btnBonus = document.getElementById("bonus");
+
+// let count = 0;
+
+// function mysteryBox() {
+//   btnBonus.addEventListener("click", ()=> {
+//   gameState.count++;
+//   if (gameState.count === 100)
+//   addExtraLP(1000);
+//   updateHUD();
+// });
+// }
+
+
+
+
 
 
 
