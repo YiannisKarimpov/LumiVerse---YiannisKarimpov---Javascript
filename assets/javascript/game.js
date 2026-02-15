@@ -3,47 +3,202 @@
 
 
 let lives = 3;
-let correctStreak = 0;
-let stage = 1;
-
 let lumiPoints = 50;
+let correctStreak = 0;
+let quizStage = 1;
+let battleStage = 1;
 
-let currentStageQuestions = [];
+let count = 0;
+
+let questionsLeft = 10;
+
+
+
+
+// -----------------GAME MODE CHARCTERS LIST------------
+
+const heroes = {
+
+  // LumiSquad Heroes
+
+  Kyaazer:  { team: "LumiSquad", rarity: "Legendary", hp:120, atk:25, def:10, mag: 20  },
+  Inachu:   { team: "LumiSquad", rarity: "Epic",      hp:100, atk:18, def:12, mag: 25  },
+  Noooyer:  { team: "LumiSquad", rarity: "Epic",      hp:95,  atk:20, def:8,  mag: 22  },
+  Jynxie:   { team: "LumiSquad", rarity: "Rare",      hp:85,  atk:16, def:7,  mag: 28  },
+  Velmira:  { team: "LumiSquad", rarity: "Rare",      hp:90,  atk:14, def:10, mag: 30  },
+ 
+  // GrimLight Heroes rarity: ""
+ 
+  Nyxara:   { team: "GrimLight", rarity: "Legendary", hp:115, atk:24, def:12, mag: 18  },
+  Morrix:   { team: "GrimLight", rarity: "Epic",      hp:100, atk:22, def:10, mag: 15  },
+  Seraphyne:{ team: "GrimLight", rarity: "Epic",      hp:95,  atk:19, def:9,  mag: 24  },
+  Pyrakon:  { team: "GrimLight", rarity: "Rare",      hp:110, atk:26, def:8,  mag: 10  },
+  Vael:     { team: "GrimLight", rarity: "Rare",      hp:90,  atk:17, def:14, mag: 12  },
+ 
+  // Void Choir Heroes rarity: ""
+ 
+  Lucerith: { team: "Void Choir",rarity: "Legendary",  hp:125, atk:23, def:13, mag: 22  },
+  Virelle:  { team: "Void Choir",rarity: "Epic",       hp:100, atk:18, def:10, mag: 26  },
+  Erezia:   { team: "Void Choir",rarity: "Epic",       hp:95,  atk:17, def:11, mag: 27  },
+  Khalvex:  { team: "Void Choir",rarity: "Rare",       hp:105, atk:24, def:9,  mag: 14  },
+  Oryn:     { team: "Void Choir",rarity: "Rare",       hp:90,  atk:16, def:12, mag: 25  },
+
+  
+};
+// ----------------------END-----------------------------
+
+// ---------------------ENEMIES/TIER LIST -------------------
+const enemies = {
+// --------------------TIER 1-------------------------------
+  weak : [
+  { name: "Void Fragment", hp:85,  atk:16, def:6,  mag: 14 },
+  { name: "Grim Warden",   hp:105, atk:20, def:10, mag: 8 },
+  { name: "Abyss Wisp",    hp:70,  atk:14, def:4,  mag: 20 },
+  { name: "Rift Crawler",  hp:95,  atk:22, def:7,  mag: 6 }
+],
+// --------------------TIER 2-------------------------------
+ elite: [
+  { name: "Echo Knight",    hp:150,  atk:28, def:18,  mag: 12 },
+  { name: "Null Priestess",  hp:130,  atk:18, def:12,  mag: 32 }
+ ],
+// --------------------TIER 3-------------------------------
+ commander: [
+  { name: "Dread Overseer",  hp:220,  atk:35, def:22,  mag: 25 }
+ ],
+// --------------------TIER 4-------------------------------
+ boss: [
+  { name: "Oblivion Herald",  hp:350,  atk:48, def:30,  mag: 45 }
+ ]
+};
+// ----------------------------END----------------------------
+
+let player;
+let enemy;
+
+// enemy.hp += stage * 20;
+// enemy.atk += stage * 5;
+
+
+// -----------------
+
+
+
+
+let currentQuizStageQuestions = [];
 let currentQuestionIndex = 0;
 let currentQuestion = null;
+
+// testing
+// let btnBonus = document.getElementById("bonus");
+
+
+// ----
 
 const gameState = {
     mode: "quiz",
     lives: 3,
     lumiPoints: 50,
     correctStreak: 0,
-    correctAnswer: 0
+    correctAnswer: 0,
+    questionsLeft: 10
+    
 };
 
-const maxLives = 6;
+
 
 
 // ----------------UI FUNCTION ------------------//
 
 function updateHUD() {
+  console.log("HUD Running");
     document.getElementById("lives").textContent = gameState.lives;
     document.getElementById("lumiPoints").textContent = gameState.lumiPoints;
     document.getElementById("streak-points").textContent = gameState.correctStreak;
     document.getElementById("correct-answers").textContent = gameState.correctAnswer;
+    document.getElementById("question-number").textContent = gameState.questionNumber;
+    document.getElementById("difficulty-mode").textContent = gameState.difficulty;
+    document.getElementById("stage-number").textContent = showQuizStageIntro[quizStage];
+
+
+
+
+
+    // in progress
     document.getElementById("collect-clicks").textContent = gameState.count
-    
+   //------------------------------ 
 }
+// ------------------END OF UI---------------------//
+
+
+ const showQuizStageIntro = {
+    1: "Stage 1 Foundations of Light🌇",
+    2: "Stage 2 Shadows Rising🌑",
+    3: "Stage 3 Echoes of the Void🌌" 
+  };
+
+
+  
+//------------------ work under progress ------------//
+
+
+
+
+
+
+
+// ---------------------------------------------------
+
+const maxLives = 6;
+
+
+
 
 // -----------START QUIZ BUTTON------------------//
 
 document.getElementById("start-quiz").addEventListener("click", () => {
-      startStage("stage1");
+      quizStage = 1;
+      gameState.lives = 3;
+      gameState.correctAnswer = 0; 
+      gameState.correctStreak = 0; 
+      gameState.questionsLeft = 10;
+      gameState.count = 0;
+      
+
+      updateHUD();
+      startStage();
     });
+
+// document.getElementById("start-quiz-nav").addEventListener("click", ()=> {
+//   startStage("stage1");
+// });
+
+// -------------START GAME BUTTON----------------
+
+// document.getElementById("start-game").addEventListener("click", () => {
+//   gameState.lives = 3;
+//   gameState.correctAnswer = 0; 
+//   gameState.correctStreak = 0; 
+//   gameState.questionsLeft = 10;
+//   gameState.count = 0;
+
+//   document.getElementById("quiz").style.display= "none";
+//   document.getElementById("hero-selection").style.display= "block";
+//   document.getElementById("battle").style.display= "none";
+
+//   updateHUD();
+//   renderHeroSelection();
+// });
+
+
+
+
+
+
 
 // ---------------QUESTIONS POOL---------------- //
 
 let quizData = {
-    stage1: [
+    quizStage1: [
         {
       id: 1,
       question: "What is the Light-aligned hero team called?",
@@ -226,7 +381,7 @@ let quizData = {
     },
     ],
 
-    stage2: [
+    quizStage2: [
     {
        id: 31, 
        question: "Which LumiSquad hero is most tied to dreams?",
@@ -369,7 +524,7 @@ let quizData = {
     },  
     ],
 
-    stage3: [   
+    quizStage3: [   
     {
        id: 51, 
        question: "Why does LumiVerse avoid “good vs evil”?",
@@ -449,33 +604,131 @@ let quizData = {
 
 
 function shuffleQuestions(array) {
+  console.log("shuffle Questions running");
     return array.sort(() => Math.random() - 0.5);
 }
 
 
-function getStageQuestions(stageKey, count) {
-  return shuffleQuestions([...quizData[stageKey]]).slice(0, count);
+function getStageQuestions(quizStageKey, count) {
+  return shuffleQuestions([...quizData[quizStageKey]]).slice(0, count);
 }
+ 
 
-function startStage(stageKey) {
+//----------- original b4 modfi------------
 
-  console.log("stageKey:", stageKey);
-  console.log("quizData[stageKey]:", quizData[stageKey]);
+
+// function startStage(stageKey) {
+
+//   console.log("stageKey:", stageKey);
+//   console.log("quizData[stageKey]:", quizData[stageKey]);
   
-    currentStageQuestions = getStageQuestions(stageKey, 10);
-    currentQuestionIndex = 0;
-    showQuestion();
+//     currentStageQuestions = getStageQuestions(stageKey, 10);
+//     currentQuestionIndex = 0;
+//     showQuestion();
+// }
+// ---------------------------------------------
+
+//------------------ attempt 1------------------------
+
+
+
+function startStage() {
+  const quizStageKey = `quizStage${quizStage}`;
+
+  if (!quizData[quizStageKey]) {
+    console.log("All Stages Complete");
+    // create function
+    endQuiz();
+    // reminder
+    return;
+  }
+
+  currentQuizStage = quizStage;
+  currentQuizStageQuestions = getStageQuestions(quizStageKey, 10);
+  currentQuestionIndex = 0;
+  showQuestion();
+}
+
+// function completeStage() {
+//   alert(`Stage ${currentStage} Complete!`);
+
+//   gameState.lumiPoints += 100 * currentStage;
+//   gameState.lives = Math.min(gameState.lives + 3, maxLives);
+
+//   updateHUD();
+
+//   startStage(currentStage + 1);
+// }
+
+function endQuiz() {
+  alert("You've Mastered The LumiVerse.");
+
+  document.getElementById("quiz").style.display= "none";
+  document.getElementById("hero-selection").style.display= "block";
+  document.getElementById("battle").style.display= "none";
+
+  renderHeroSelection();
+
+
+
+
+
+  // startBattle();
+}
+
+function renderHeroSelection() {
+  const heroList = document.getElementById("hero-list");
+  heroList.innerHTML = "";
+
+  Object.keys(heroes).forEach(heroName => {
+    const hero = heroes[heroName];
+
+    const btn = document.createElement("button");
+    btn.classList.add("hero-btn");
+
+    btn.innerHTML = `
+    <strong>${heroName}</strong><br>
+    Team: ${hero.team}<br>
+    Rarity: ${hero.rarity}<br>
+    HP: ${hero.hp} | ATK:${hero.atk}| DEF:${hero.def} | MAG:${hero.mag}
+    `;
+
+    btn.onclick = () => selectHero(heroName);
+
+    heroList.appendChild(btn);
+
+  });
 }
 
 
-    const stage1Questions = getStageQuestions("stage1", 10);
-    const stage2Questions = getStageQuestions("stage2", 10);
-    const stage3Questions = getStageQuestions("stage3", 10);
+function selectHero(heroName) {
+  player = { ...heroes[heroName] };
+  player.name = heroName;
+  player.maxHp = player.hp;
+
+  document.getElementById("hero-selection").style.display = "none";
+  document.getElementById("battle").style.display = "block";
+
+  startBattle();
+}
+
+// ------------end of attempt----------
+
+
+
+
+
+
+
+    // const stage1Questions = getStageQuestions("stage1", 10);
+    // const stage2Questions = getStageQuestions("stage2", 10);
+    // const stage3Questions = getStageQuestions("stage3", 10);
 
 
     // ---------QUESTION FUNCTIONS----------//
 function showQuestion() {
-    currentQuestion = currentStageQuestions[currentQuestionIndex];
+  console.log("show questiong running");
+    currentQuestion = currentQuizStageQuestions[currentQuestionIndex];
 
 
     if (!currentQuestion) {
@@ -494,21 +747,203 @@ function showQuestion() {
 }
 
 function nextQuestion() {
+  console.log("Stage:", quizStage);
   currentQuestionIndex++;
+  
+  if (currentQuestionIndex >= currentQuizStageQuestions.length) {
+    alert("Stage Completed!");
+    quizStage++;
 
-  if (currentQuestionIndex >= currentStageQuestions.length) {
-    alert("Stage Complete!");
-    return;
+    if (quizStage > 3) {
+      endQuiz();
+      return;
+    }
+
+    document.getElementById("questionText").textContent = `quizStage ${quizStage} begins...`;
+
+    setTimeout(() => {
+      startStage();
+    }, 1000);
+
+    
+// loseQuestionsLeft();
+//     updateHUD();
+//     return;
+
+
+// //  new line
+//     completeStage();
+// // end new line
+//     return;
   }
 
   showQuestion();
 }
 
 
+function RedQuestionsLeft() {
+    console.log("questions left running");
+    gameState.questionNumber --;
+
+    updateHUD();
+    
+
+  }
+
+
+
+// ------------------Battle functions-----------------
+
+function startBattle() {
+  document.getElementById("battle-log").innerHTML = "";
+
+  const enemyTemplate = getEnemyByStage(battleStage);
+
+  if (!enemyTemplate) {
+    console.error("Enemy not found on stage", battleStage);
+    return;
+  }
+
+
+
+
+  enemy = { ...enemyTemplate };
+  enemy.maxHp = enemy.hp;
+
+  document.getElementById("player-name").textContent = player.name;
+  document.getElementById("enemy-name").textContent = enemy.name;
+
+  updateBattleUI();
+
+}
+
+
+function updateBattleUI() {
+  document.getElementById("player-hp").textContent = player.hp;
+  document.getElementById("enemy-hp").textContent = enemy.hp;
+
+  document.getElementById("player-hp-bar").style.width = 
+  (player.hp / player.maxHp) * 100 + "%";
+
+  document.getElementById("enemy-hp-bar").style.width = 
+  (enemy.hp / enemy.maxHp) * 100 + "%";
+}
+
+function calculateDamage(attacker, defender, isMagic = false) {
+  if (!attacker || !defender) {
+    console.error("Damage error", attacker, defender);
+    return 0;
+  }
+  let base = isMagic ? attacker.mag : attacker.atk;
+  let defence = defender.def;
+  
+  let damage = base - defence * 0.5;
+  
+  damage += Math.floor(Math.random() * 6);
+  
+  // was on top globally
+    let crit = Math.random() < 0.1;
+  if (crit) damage *= 2;
+  if (crit) addBattleLog("CRITICAL HIT!");
+  // ---------end-------------------
+
+
+  return Math.max(5, Math.floor(damage));
+}
+
+document.getElementById("attack-btn").onclick = function () {
+  playerTurn(false);
+};
+document.getElementById("magic-btn").onclick = function () {
+  playerTurn(true);
+};
+
+function addBattleLog(message) {
+  const log = document.getElementById("battle-log");
+  if (!log) return;
+
+  const entry = document.createElement("div");
+  entry.textContent = message;
+  log.prepend(entry);
+
+  // player.hp = Math.min(player.hp + 20, player.maxHp); --healing----
+}
+
+function playerTurn(isMagic) {
+
+  const damage = calculateDamage(player, enemy, isMagic);
+  enemy.hp -= damage;
+
+  addBattleLog(`${player.name} dealt ${damage} damage to ${enemy.name}`);
+
+  if (enemy.hp <= 0) {
+    addBattleLog(`${enemy.name} was defeated!`);
+
+    gameState.lumiPoints +=50;
+    updateHUD();
+
+    battleStage++;
+
+    setTimeout(() => {
+      startBattle();
+    }, 1000);
+
+    return;
+  }
+
+  updateBattleUI();
+
+  setTimeout(enemyTurn, 600);
+}
+
+function enemyTurn() {
+
+  const damage = calculateDamage(enemy, player, false);
+  player.hp -= damage;
+
+  addBattleLog(`${enemy.name} hit ${player.name} for ${damage}`);
+
+  if (player.hp <= 0 ) {
+    addBattleLog("You were defeated...");
+    return;
+  }
+
+  updateBattleUI();
+}
+
+function attack() {
+  playerTurn(false);
+}
+
+function getEnemyByStage(stageNumber) {
+
+  if (stageNumber <= 2)
+     return randomFrom(enemies.weak);
+
+  if (stageNumber <= 4)
+     return randomFrom([...enemies.weak, ...enemies.elite]);
+
+  if (stageNumber ===  5)
+    return randomFrom([...enemies.commander]);
+
+     return randomFrom(enemies.elite);
+}
+
+function randomFrom(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+
+// ----------------------end--------------------
+ 
+
+
 // ------------GAME OVER FUNCTIONS--------------//
 function gameOver() {
+  console.log("game over running");
   if (gameState.lives === 0) {
     alert("Game Over Better Luck Next Time!")
+    
   };
 }
 // -----------ANSWER FUNCTIONS--------------//
@@ -517,20 +952,29 @@ function gameOver() {
 
 
 function addCorrectAnswer() {
+  console.log("add correct answer running");
   gameState.correctAnswer++;
   addExtraLP();
   updateHUD();
 }
 
 function correctAnswer() {
+  console.log("correct answer ruuninng");
     gameState.correctStreak++;
+    // if (gameState.correctAnswer >= 15) unlockEpicHero();
+    // if (gameState.correctAnswer === 30) unlockLegenaryHero();
     addCorrectAnswer();
     addLP(10);
+    extraLife();
     updateHUD();
 }
 
 function wrongAnswer() {
-    gameState.correctStreak--;
+  console.log("wrong answer running");
+    // gameState.correctStreak--;
+    if (gameState.correctStreak === 0)
+      gameState.correctStreak = 0;
+    else (gameState.correctStreak--)
     loseLife();
     updateHUD();
 }
@@ -590,8 +1034,10 @@ function addLP (amount) {
 }
 
 function addExtraLP() {
-  if (gameState.correctAnswer === 15)
+  if (gameState.correctAnswer === 10)
     addLP(300);
+  else if (gameState.correctAnswer === 20)
+    addLP (600);
   else if (gameState.correctAnswer === 30)
     addLP (1000);
 }
@@ -678,20 +1124,29 @@ function loseStreakPts() {
 }
 
 
-// let btnBonus = document.getElementById("bonus");
+// ------------in progresss-----------
 
-// let count = 0;
-
-// function mysteryBox() {
-//   btnBonus.addEventListener("click", ()=> {
-//   gameState.count++;
-//   if (gameState.count === 100)
-//   addExtraLP(1000);
+// function setClicks() {
+//   gameState.count = 0;
 //   updateHUD();
-// });
+
 // }
 
+// function addClicks() {
+//   console.log("clicked runs")
+//   btnBonus.addEventListener("click", ()=> {
+//   count++;
+// });
+//   updateHUD();
+// }
 
+// function mysteryBox() {
+//   console.log("mystery box running");
+// addClicks();
+// updateHUD();
+// }
+
+// ---------------------------------------
 
 
 

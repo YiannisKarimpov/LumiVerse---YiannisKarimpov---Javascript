@@ -11,8 +11,11 @@
         <nav class="nav-wrapper">
             <ul class="nav-list">
                 <li class="home-button"> <a href="index.html"> <img src="assets/images/navigation/home-page-logo.png" width="300px" id="home-button-icon" alt="Home Button"></a> </li>
-                <li class="quiz-button" id="play-quiz"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
+                <li class="quiz-button" id="start-quiz-nav"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
                 <li class="play-button"><a href="play.html"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></a></li>
+                <!-- <li><button id="start-game"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></button></li> -->
+
+
             </ul>
         </nav>
 
@@ -20,6 +23,21 @@
 
     <main>
         <div id="hud">
+            <div class="stage-wrap">
+        <div class="stat">
+            <span>Chapter:</span>
+            <span id="stage-number">1</span>
+        </div>
+
+        <div class="stat">
+            <span>Questions:</span>
+            <span id="question-number">10</span>
+        </div>
+        <div class="stat">
+            <span>Mode:</span>
+            <span id="difficulty-mode">Easy</span>
+        </div>
+        </div>
         <div class="stat">
             <img src="assets/images/navigation/lives.png" id="player-lives" alt="Player Lives">  <span id="lives">3</span> 
         </div>
@@ -88,7 +106,7 @@
                 <button class="answerBtn">is it A?</button>
                 <button class="answerBtn">maybe B?</button>
                 <button class="answerBtn">hmmm</button>
-                <!-- <button id="bonus">lets see</button> -->
+                <button id="bonus">lets see</button>
             </div>
         </div>
 
@@ -104,6 +122,72 @@
 
 
         </section>
+
+        <div id="hero-selection" style="display:none;">
+            <h2>Select Your Hero</h2>
+            <div id="hero-list"></div>
+        </div>
+
+
+        <!---------------- BATTLE HUB ------------------->
+
+        <!-- new version -->
+        <div id="battle">
+
+            <div class="battle-top">
+
+                <div class="fighter" id="player-panel">
+                    <img id="player-image" src="assets/images/characters/lumi-squad/noyer-gallery/noyer-original.jpeg" alt="Noooyer -The Sparkbearer-">
+                    <h3 id="player-name"></h3>
+                    <div class="hp-bar">
+                        <div id="player-hp-bar"></div>
+                    </div>    
+                <p>HP: <span id="player-hp"></span></p>
+                </div>
+                
+
+                <div class="fighter" id="enemy-panel">
+                    <img id="enemy-image" src="assets/images/characters/enemy/void-fragment.jfif" alt="Enemy Mob">
+                    <h3 id="enemy-name"></h3>
+                    <div class="hp-bar">
+                    <div id="enemy-hp-bar"></div>
+                </div>
+                <p>HP: <span id="enemy-hp"></span></p>
+            </div>
+
+        </div>
+        
+        <div class="battle-actions">
+            <button id="attack-btn">Attack</button>
+            <button id="magic-btn">Magic</button>
+        </div>
+
+        <div id="battle-log"></div>
+
+    </div>
+
+
+
+<!-- --------------------------old version  ------------------------ -->
+
+        <!-- <section id="battle" style="display: none;">
+            <h2>Battle Mode</h2>
+
+            <div class="fighter">
+                <h3 id="player-name"></h3>
+                <p>HP: <span id="player-hp"></span></p>
+            </div>
+
+            <div class="fighter">
+                <h3 id="enemy-name"></h3>
+                <p>HP: <span id="enemy-hp"></span></p>
+            </div>
+
+            <button id="attack-btn">Attack</button>
+            <button id="magic-btn">Magic</button>
+
+            
+        </section> -->
 
 
         </section>

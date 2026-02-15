@@ -300,3 +300,61 @@ p {
 body {
     background-color: gray;
 }
+
+
+.hero-btn {
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    width: 350px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+
+}
+
+.hero-btn:hover {
+    background: gold;
+    color: black
+}
+
+
+/*------------------------- Battle hub syles------------------- */
+
+.battle-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.fighter {
+    width: 45%;
+    text-align: center;
+}
+
+.fighter img {
+    width: 150px;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 1.5rem;
+    background: #333;
+    margin: 5px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#player-hp-bar,
+#enemy-hp-bar {
+    height: 100%;
+    background: limegreen;
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+.battle-actions {
+    text-align: center;
+    margin-top: 15px;
+}
