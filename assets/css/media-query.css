@@ -3,8 +3,177 @@
   ##Screen = 1281px to higher resolution desktops
 */
 
+/* 
+
 @media (min-width: 1281px) {
-  .main-city {
+  .header-wrapper {
+    display: block;
+    padding-top: 6.5rem;
+    margin: 0;
+    background-color: rgb(148, 204, 204);
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top: 0;
+
+}
+.nav-list {
+    padding: 1rem;
+}
+
+#hud {
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 255, 234, 0.486) ;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 20px;
+    font-family: sans-serif;
+    gap: 1rem;
+}
+
+.top-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 13rem;
+    margin-top: 1.8rem;
+    font-size: 35px;
+    padding-bottom: 1rem;
+    color: orangered;
+    background-color: rgba(192, 192, 192, 0.473);
+}
+
+.intro-heroes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(32, 178, 171, 0.829);
+    padding: 0.3rem 0.7rem;
+    border: 5px solid black;
+
+}
+
+.info-heroes {
+    border: 5px solid black;
+    background-color: lightblue;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 1rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#quiz {
+    
+    max-width: 100%;
+    margin: 0.5rem ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-color: rgba(57, 61, 61, 0.795);
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-size: 18px;
+}
+
+
+.answerBtn {
+    display: block;
+    width: 100%;
+    margin:  10px 0;
+    padding:  0 20px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(18, 78, 241);
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 68px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    margin: auto; 
+}
+
+.lumiverse-wrapper {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0; 
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    word-spacing: 1px;
+    border: 5px solid black;
+    background-color: aquamarine;
+}
+
+.lumisquad-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 19.3px;
+    padding: 1rem 0.5rem ;
+    color: yellow;
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.grimlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 17.7px;
+    padding: 1rem 0.5rem ;
+    color: darkgray;
+    background-color: black;
+    border-radius: 20px;
+}
+.thevoidchoir-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 18.4px;
+    padding: 1rem 0.5rem ;
+    color: darkmagenta;
+    background-color: lightslategray;
+    border-radius: 20px;
+}
+
+.main-city {
     display: flex;
     flex-wrap: wrap;
 }
@@ -16,6 +185,8 @@
   
   
 }
+ */
+
 
 /* 
   ##Device = Laptops, Desktops
@@ -23,7 +194,174 @@
 */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .main-city {
+  .header-wrapper {
+    display: block;
+    padding-top: 6.5rem;
+    margin: 0;
+    background-color: rgb(148, 204, 204);
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top: 0;
+
+}
+.nav-list {
+    padding: 1rem;
+}
+
+#hud {
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 255, 234, 0.486) ;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 20px;
+    font-family: sans-serif;
+    gap: 1rem;
+}
+
+.top-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 13rem;
+    margin-top: 1.8rem;
+    font-size: 35px;
+    padding-bottom: 1rem;
+    color: orangered;
+    background-color: rgba(192, 192, 192, 0.473);
+}
+
+.intro-heroes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(32, 178, 171, 0.829);
+    padding: 0.3rem 0.7rem;
+    border: 5px solid black;
+
+}
+
+.info-heroes {
+    border: 5px solid black;
+    background-color: lightblue;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 1rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#quiz {
+    
+    max-width: 100%;
+    margin: 0.5rem ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-color: rgba(57, 61, 61, 0.795);
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-size: 18px;
+}
+
+
+.answerBtn {
+    display: block;
+    width: 100%;
+    margin:  10px 0;
+    padding:  0 20px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(18, 78, 241);
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 68px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#hero-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 2rem 0;
+    margin: auto; 
+}
+
+.lumiverse-wrapper {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0; 
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    word-spacing: 1px;
+    border: 5px solid black;
+    background-color: aquamarine;
+}
+
+.lumisquad-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 19.3px;
+    padding: 1rem 0.5rem ;
+    color: yellow;
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.grimlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 17.7px;
+    padding: 1rem 0.5rem ;
+    color: darkgray;
+    background-color: black;
+    border-radius: 20px;
+}
+.thevoidchoir-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 18.4px;
+    padding: 1rem 0.5rem ;
+    color: darkmagenta;
+    background-color: lightslategray;
+    border-radius: 20px;
+}
+
+.main-city {
     display: flex;
     flex-wrap: wrap;
 }
@@ -42,7 +380,176 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .main-city {
+  .header-wrapper {
+    display: block;
+    background-color: rgb(148, 204, 204);
+    border-radius: 0 0 50px 50px;
+    position: sticky;
+    top: 0px;
+    left: 390px;
+
+}
+.nav-list {
+    display: flex;
+    justify-content: end;
+    padding: 1rem ;
+    
+}
+
+#hud {
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    background-color: rgba(0, 255, 234, 0.486) ;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 20px;
+    font-family: sans-serif;
+    gap: 1rem;
+}
+
+.top-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.8rem;
+    margin-top: 0.2rem;
+    font-size: 35px;
+    padding-bottom: 1rem;
+    color: orangered;
+    background-color: rgba(192, 192, 192, 0.473);
+}
+
+.intro-heroes {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(32, 178, 171, 0.829);
+    padding: 0.3rem 0.7rem;
+    border: 5px solid black;
+
+}
+
+.info-heroes {
+    border: 5px solid black;
+    background-color: lightblue;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 2rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 2rem 3rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#quiz {
+    
+    max-width: 100%;
+    margin: 1.5rem ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-color: rgba(57, 61, 61, 0.795);
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-size: 28px;
+}
+
+
+.answerBtn {
+    display: block;
+    width: 100%;
+    margin:  10px 0;
+    padding:  0 20px;
+    font-size: 20px;
+    border-radius: 18px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(18, 78, 241);
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 68px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#hero-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 2rem 0;
+    margin: auto; 
+}
+
+.lumiverse-wrapper {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0; 
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    word-spacing: 1px;
+    border: 5px solid black;
+    background-color: aquamarine;
+}
+
+.lumisquad-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 19.3px;
+    padding: 1rem 0.5rem ;
+    color: yellow;
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.grimlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 17.7px;
+    padding: 1rem 0.5rem ;
+    color: darkgray;
+    background-color: black;
+    border-radius: 20px;
+}
+.thevoidchoir-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 18.4px;
+    padding: 1rem 0.5rem ;
+    color: darkmagenta;
+    background-color: lightslategray;
+    border-radius: 20px;
+}
+
+.main-city {
     display: flex;
     flex-wrap: wrap;
 }
@@ -61,7 +568,175 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .main-city {
+  .header-wrapper {
+    display: flex;
+    justify-content: end;
+    padding-top: 1rem;
+    margin: auto;
+    background-color: rgb(148, 204, 204);
+    border-radius: 0 0 50px 50px;
+    position: sticky;
+    top: 0;
+
+}
+.nav-list {
+    padding: 1rem;
+}
+
+#hud {
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    background-color: rgba(0, 255, 234, 0.486) ;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 20px;
+    font-family: sans-serif;
+    gap: 1rem;
+}
+
+.top-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    margin-top: 1.8rem;
+    font-size: 35px;
+    padding-bottom: 1rem;
+    color: orangered;
+    background-color: rgba(192, 192, 192, 0.473);
+}
+
+.intro-heroes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(32, 178, 171, 0.829);
+    padding: 0.3rem 0.7rem;
+    border: 5px solid black;
+
+}
+
+.info-heroes {
+    border: 5px solid black;
+    background-color: lightblue;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 1rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#quiz {
+    
+    max-width: 100%;
+    margin: 0.5rem ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-color: rgba(57, 61, 61, 0.795);
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-size: 18px;
+}
+
+
+.answerBtn {
+    display: block;
+    width: 100%;
+    margin:  10px 0;
+    padding:  0 20px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(18, 78, 241);
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 172.5px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#hero-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 4rem 0;
+    margin: auto; 
+}
+
+.lumiverse-wrapper {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0; 
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    word-spacing: 1px;
+    border: 5px solid black;
+    background-color: aquamarine;
+}
+
+.lumisquad-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 19.3px;
+    padding: 1rem 0.5rem ;
+    color: yellow;
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.grimlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 17.7px;
+    padding: 1rem 0.5rem ;
+    color: darkgray;
+    background-color: black;
+    border-radius: 20px;
+}
+.thevoidchoir-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 18.4px;
+    padding: 1rem 0.5rem ;
+    color: darkmagenta;
+    background-color: lightslategray;
+    border-radius: 20px;
+}
+
+.main-city {
     display: flex;
     flex-wrap: wrap;
 }
@@ -80,7 +755,177 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-  .main-city {
+    
+  .header-wrapper {
+    display: block;
+    padding-top: 6.5rem;
+    margin: 0;
+    background-color: rgb(148, 204, 204);
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top: 0;
+
+}
+.nav-list {
+    padding: 1rem;
+}
+
+#hud {
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 255, 234, 0.486) ;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 20px;
+    font-family: sans-serif;
+    gap: 1rem;
+}
+
+.top-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 13rem;
+    margin-top: 1.8rem;
+    font-size: 35px;
+    padding-bottom: 1rem;
+    color: orangered;
+    background-color: rgba(192, 192, 192, 0.473);
+}
+
+.intro-heroes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(32, 178, 171, 0.829);
+    padding: 0.3rem 0.7rem;
+    border: 5px solid black;
+
+}
+
+.info-heroes {
+    border: 5px solid black;
+    background-color: lightblue;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 1rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+#quiz {
+    
+    max-width: 100%;
+    margin: 0.5rem ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-color: rgba(57, 61, 61, 0.795);
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-size: 18px;
+}
+
+
+.answerBtn {
+    display: block;
+    width: 100%;
+    margin:  10px 0;
+    padding:  0 20px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(18, 78, 241);
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 68px;
+    background: #222;
+    color: bisque;
+    border: 4px solid gold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#hero-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 2rem 0;
+    margin: auto; 
+}
+
+.lumiverse-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0; 
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    word-spacing: 1px;
+    border: 5px solid black;
+    background-color: aquamarine;
+}
+
+.lumisquad-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 19.3px;
+    padding: 1rem 0.5rem ;
+    color: yellow;
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.grimlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 17.7px;
+    padding: 1rem 0.5rem ;
+    color: darkgray;
+    background-color: black;
+    border-radius: 20px;
+}
+.thevoidchoir-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    font-size: 18.4px;
+    padding: 1rem 0.5rem ;
+    color: darkmagenta;
+    background-color: lightslategray;
+    border-radius: 20px;
+}
+
+.main-city {
     display: flex;
     flex-wrap: wrap;
 }

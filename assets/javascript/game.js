@@ -121,7 +121,7 @@ function updateHUD() {
 
 
     // in progress
-    document.getElementById("collect-clicks").textContent = gameState.count
+    document.getElementById("collect-clicks").textContent = gameState.count;
    //------------------------------ 
 }
 // ------------------END OF UI---------------------//
@@ -158,7 +158,7 @@ document.getElementById("start-quiz").addEventListener("click", () => {
       gameState.correctAnswer = 0; 
       gameState.correctStreak = 0; 
       gameState.questionsLeft = 10;
-      gameState.count = 0;
+      // gameState.count = 0;
       
 
       updateHUD();
