@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LumiVerse</title>
+    <title>Noooyer Ark "LumiVerse"</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media-query.css">
 </head>
 <body>
     <header class="header-wrapper">
         <nav class="nav-wrapper">
             <ul class="nav-list">
                 <li class="home-button"> <a href="index.html"> <img src="assets/images/navigation/home-page-logo.png" width="300px" id="home-button-icon" alt="Home Button"></a> </li>
-                <li class="quiz-button" id="start-quiz-nav"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
-                <li class="play-button"><a href="play.html"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></a></li>
+                <!-- <li class="quiz-button" id="start-quiz-nav"><a href="quiz.html"><img src="assets/images/navigation/qiuz.png" width="80px"  alt="Play Quiz"></a></li>
+                <li class="play-button"><a href="play.html"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></a></li> -->
                 <!-- <li><button id="start-game"><img src="assets/images/navigation/play.png" width="80px" alt="Play Game"></button></li> -->
 
 
@@ -24,19 +25,19 @@
     <main>
         <div id="hud">
             <div class="stage-wrap">
-        <div class="stat">
+        <!-- <div class="stat">
             <span>Chapter:</span>
             <span id="stage-number">1</span>
-        </div>
+        </div> -->
 
-        <div class="stat">
+        <!-- <div class="stat">
             <span>Questions:</span>
             <span id="question-number">10</span>
         </div>
         <div class="stat">
             <span>Mode:</span>
             <span id="difficulty-mode">Easy</span>
-        </div>
+        </div> -->
         </div>
         <div class="stat">
             <img src="assets/images/navigation/lives.png" id="player-lives" alt="Player Lives">  <span id="lives">3</span> 
@@ -96,35 +97,33 @@
                 <li>Otherwise start with Rare Hero</li>
             </ul>
 
+
+            <div class="start-wrapper">
             <button id="start-quiz">Lets Quiz </button>
+            <button id="start-battle">Lets Battle</button>
+            </div>
+
             <section>
 
-        <div id="quiz">
+                
+
+        <div id="quiz" style="display: none;">
             <h2 id="questionText">LumiVerse Series QuizGame</h2>
 
             <div id="answers">
                 <button class="answerBtn">is it A?</button>
                 <button class="answerBtn">maybe B?</button>
                 <button class="answerBtn">hmmm</button>
-                <button id="bonus">lets see</button>
             </div>
         </div>
 
-            
-
-
-
-
-
-
-
-
+        
 
 
         </section>
 
         <div id="hero-selection" style="display:none;">
-            <h2>Select Your Hero</h2>
+            <h2 class="sel-hero-tit">Select Your Hero</h2>
             <div id="hero-list"></div>
         </div>
 
@@ -132,27 +131,42 @@
         <!---------------- BATTLE HUB ------------------->
 
         <!-- new version -->
-        <div id="battle">
+        <div id="battle" style="display: none;">
 
             <div class="battle-top">
 
                 <div class="fighter" id="player-panel">
+                    
                     <img id="player-image" src="assets/images/characters/lumi-squad/noyer-gallery/noyer-original.jpeg" alt="Noooyer -The Sparkbearer-">
                     <h3 id="player-name"></h3>
                     <div class="hp-bar">
                         <div id="player-hp-bar"></div>
                     </div>    
                 <p>HP: <span id="player-hp"></span></p>
+                <div id="player-stats">
+                    <p>ATK: <span id="player-atk"></span></p>
+                    <p>MAG: <span id="player-mag"></span></p>
+                    <p>DEF: <span id="player-def"></span></p>
+                </div>
+
                 </div>
                 
 
                 <div class="fighter" id="enemy-panel">
                     <img id="enemy-image" src="assets/images/characters/enemy/void-fragment.jfif" alt="Enemy Mob">
                     <h3 id="enemy-name"></h3>
+
                     <div class="hp-bar">
-                    <div id="enemy-hp-bar"></div>
-                </div>
+                       <div id="enemy-hp-bar"></div>
+                    </div>
+
                 <p>HP: <span id="enemy-hp"></span></p>
+
+                <div class="stats">
+                    <p>ATK: <span id="enemy-atk"></span></p>
+                    <p>DEF: <span id="enemy-def"></span></p>
+                    <p>MAG: <span id="enemy-mag"></span></p>
+                </div>
             </div>
 
         </div>
@@ -166,36 +180,44 @@
 
     </div>
 
+<!-- ========================== LumiStore ========================== -->
+
+    <div id="store" style="display: none;">
+     <h2>LumiVerse Store</h2>
+     <p>Your LP: <span id="store-lp"></span></p>
+
+       <div id="store-hero-stats">
+            <h3>Your Hero</h3>
+            <p>HP: <span id="store-hp"></span></p>
+            <p>ATK: <span id="store-atk"></span></p>
+            <p>MAG: <span id="store-mag"></span></p>
+            <p>DEF: <span id="store-def"></span></p>
+       </div>
+
+            <button onclick="buyItem('hpPotion')">HP Potion (50 LP)  </button>
+            <button onclick="buyItem('maxHp')">+20 Max HP (200 LP)</button>
+            <button onclick="buyItem('atk')">+5 Attack (200LP)</button>
+            <button onclick="buyItem('mag')">+5 Magic (200LP)</button>
+            <button onclick="buyItem('def')">+5 Defence (200LP)</button>
+            <button onclick="buyItem('crit')">+2% Crit (200LP)</button>
+            <button onclick="buyItem('dodge')">+2% Dodge (200LP)</button>
+            <button onclick="buyItem('lifesteal')">+2% Lifesteal (200LP)</button>
+            <!-- <img src="assets/images/navigation/heal.png" alt=""> -->
+
+            <br><br>
+            <button onclick="backToBattle()">Return to Battle</button>
+    </div>
 
 
-<!-- --------------------------old version  ------------------------ -->
-
-        <!-- <section id="battle" style="display: none;">
-            <h2>Battle Mode</h2>
-
-            <div class="fighter">
-                <h3 id="player-name"></h3>
-                <p>HP: <span id="player-hp"></span></p>
-            </div>
-
-            <div class="fighter">
-                <h3 id="enemy-name"></h3>
-                <p>HP: <span id="enemy-hp"></span></p>
-            </div>
-
-            <button id="attack-btn">Attack</button>
-            <button id="magic-btn">Magic</button>
-
-            
-        </section> -->
 
 
         </section>
 
-        <div class="lumiverse-wrapper">
+    <div class="lumiverse-wrapper">
+        
 
         <section class="lumisquad-wrapper">
-            <h2>Heroes - The LumiSquad(Light)</h2>
+            <h2>The LumiSquad(Light)</h2>
             <p> 
             Kyaazer - "The Fallen Star"  | <span class="legendary">"Legendary"</span> <br>
             Inachu - "The Moon Sentinel" | <span class="epic">"Epic"</span> <br>
@@ -212,7 +234,7 @@
         </section>
 
         <section class="grimlight-wrapper">
-            <h2>Heroes - The GrimLight(Dark)</h2>
+            <h2>The GrimLight(Dark)</h2>
             <p> 
             Nyxara - “The Velvet Shadow”  | <span class="legendary">"Legendary"</span> <br>
             Morrix - “The Time Breaker” | <span class="epic">"Epic"</span> <br>
@@ -228,7 +250,7 @@
         </section>
 
         <section class="thevoidchoir-wrapper">
-            <h2>Heroes - The Void Choir(Void)</h2>
+            <h2>The Void Choir(Void)</h2>
             <p> 
             Lucerith - “The First Silence”  | <span class="legendary">"Legendary"</span> <br>
             Virelle - “The Mirror Saint” | <span class="epic">"Epic"</span> <br>
@@ -242,6 +264,73 @@
             <img src="assets/images/characters/void-squad/the-void-choir.png" alt="The Void Choir Team Heroes" id="void-team-image" onclick="this.requestFullscreen()" >
 
         </section>
+    </div>
+
+
+<!-- ------------------------- WORLDS --------------------------->
+
+    <div class="worlds-wrapper">
+
+        <div class="main-city">
+
+        <section class="halcyon-city">
+            <h2 class="c-name">HALCYON CITY (LUMISQUAD WORLD)</h2>
+            <p class="theme">Theme: Hopeful modern fantasy / lived-in hero city <br>
+               Mood: Warm, active, resilient <br>
+               Palette: Soft golds, sky blues, sunset oranges, clean whites
+            </p>
+            <p class="about-city">A vast futuristic city blending modern skyscrapers with subtle mystical elements. <br>  Tall glass towers reflect sunlight, while floating light-rails and holographic signage glow<br> softly in the air.   Streets are clean but alive — food stalls, pedestrians, market lights, <br> and transit lines weave through layered urban platforms. <br> Architecture mixes sleek metal, white stone, and translucent panels etched <br> with faint rune-like designs. Light feels natural and warm, casting long <br> cinematic shadows at dusk. The city feels protected — but not invincible.</p>
+            <img src="assets/images/characters/lumi-squad/halcyon-city.jpg" alt="Halcyon City Image">
+
+        </section>
+
+        <section class="grimlight-city">
+            <h2 class="c-name">GRIMLIGHT ZONES (DARK HERO TERRITORY)</h2>
+            <p class="theme">Theme: Controlled darkness / ethical sacrifice <br>
+               Mood: Cold, tactical, somber <br>
+               Palette: Charcoal, steel gray, muted blues, dim crimson
+            </p>
+            
+            <p class="about-city">A shadowed urban environment layered beneath the surface <br> world — abandoned districts, underground facilities, half-lit industrial zones. <br> Architecture is brutalist and angular, with reinforced concrete, <br>steel walkways, and exposed <br>energy conduits.  Light is sparse and directional — harsh <br> overhead lamps, red warning beacons, glowing control panels.  The air feels heavy, <br>almost still. Everything here exists for function, not comfort.</p>
+            <img src="assets/images/characters/dark-squad/grimlight-zone.jfif" alt="GrimLight Zones Image">
+
+        </section>
+
+        <section class="void-city">
+            <h2 class="c-name">THE VOID REALM (VOID CHOIR DOMAIN)</h2>
+            <p class="theme">Theme: Cosmic horror / existential silence <br>
+               Mood: Unsettling, ancient, inevitable <br>
+               Palette: Deep violet, black, void blue, faint silver
+            </p>
+            <p class="about-city">An endless abstract space where reality feels unfinished. <br> There is no sky — only layers of darkness folding into each other. <br>Floating fragments of broken architecture drift slowly,<br> half-erased. Light exists but behaves incorrectly, bending and dimming without a clear source. <br>Ethereal symbols and runes hover in the distance, fading in and out like thoughts being forgotten. <br>The ground may appear reflective or nonexistent, creating disorientation.</p>
+            <img src="assets/images/characters/void-squad/void-realm.jfif" alt="The Void Realm Image">
+
+        </section>
+        </div>
+
+        <div class="rest-worlds">
+
+        <section class="luminal-fracture-city">
+            <h2 class="c-name">THE LIMINAL FRACTURE (VOID BREACH ZONES)</h2>
+            <p class="theme">Theme: Reality breaking down <br>
+               Mood: Unstable, haunting, transitional <br>
+               Palette: Desaturated colors, pale blues, ghostly whites
+            </p>
+            <p class="about-city">A corrupted overlap between Halcyon and the Void. <br> Buildings appear incomplete, with edges dissolving into lightless gaps. <br>Streets fade into empty space. Gravity feels uncertain. Objects glitch or fragment mid-air. <br> The environment feels silent — no wind, no echo. This is where the Void touches the world without fully entering.</p>
+            <img src="assets/images/characters/luminal-fracture.jfif" alt="The Luminal Fracture Image">
+        </section>
+
+        <section class="ancient-city">
+            <h2 class="c-name">ANCIENT SANCTUMS (VELMIRA / LORE LOCATIONS)</h2>
+            <p class="theme">Theme: Reality breaking down <br>
+               Mood: Unstable, haunting, transitional <br>
+               Palette: Desaturated colors, pale blues, ghostly whites <br>
+            </p>
+            <p class="about-city">A corrupted overlap between Halcyon and the Void. <br>Buildings appear incomplete, with edges dissolving into lightless gaps. <br>Streets fade into empty space. Gravity feels uncertain. Objects glitch or fragment mid-air. <br> The environment feels silent — no wind, no echo. This is where the Void touches the world without fully entering.</p>
+            <img src="assets/images/characters/ancient-sactumns.jfif" alt="Ancient Sanctums Image">
+
+        </section>
+    </div>
     </div>
         
 

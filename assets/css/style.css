@@ -207,6 +207,32 @@ p {
     
 }
 
+#start-battle {
+    border-radius: 20px;
+    padding: 0.8rem;
+    color: green;
+    background-color: aquamarine;
+}
+#start-battle:focus {
+    transition: ease-in-out 1s;
+    transform: scale(1.0);
+    
+}
+#start-battle:hover {
+    transition: ease-in-out 1.2s;
+    transform: scale(1.3);
+    
+}
+
+.start-wrapper {
+    display: flex;
+    gap: 2rem;
+    border: 6px solid darkblue;
+    background-color: lightskyblue;
+    padding: 2rem 4rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
 
 #quiz {
     
@@ -247,7 +273,9 @@ p {
     margin: 1rem; 
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+
+    /* font-size: 26px; */
+
     word-spacing: 1px;
     border: 5px solid black;
     background-color: aquamarine;
@@ -256,9 +284,9 @@ p {
 .lumisquad-wrapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 3rem;
     padding: 2rem 1.5rem ;
-    text-align: center;
     color: yellow;
     background-color: darkblue;
     border-radius: 20px;
@@ -267,9 +295,9 @@ p {
 .grimlight-wrapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 3rem;
     padding: 2rem 1.5rem ;
-    text-align: center;
     color: darkgray;
     background-color: black;
     border-radius: 20px;
@@ -277,6 +305,7 @@ p {
 .thevoidchoir-wrapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 3rem;
     padding: 2rem 1.5rem ;
     color: darkmagenta;
@@ -319,6 +348,116 @@ body {
     color: black
 }
 
+.worlds-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    padding-top: 5rem;
+    border-top: 10px dashed #222;
+}
+
+.main-city {
+    display: flex;
+    gap: 3rem;
+    border-left: 10px dashed #222;
+    border-right: 10px dashed #222;
+    padding: 1rem;
+
+}
+
+.rest-worlds {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    border-left: 10px dashed #222;
+    border-right: 10px dashed #222;
+    border-bottom: 10px dashed #222;
+    padding: 1rem;
+    
+    margin: auto;
+
+}
+
+.halcyon-city {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem ;
+    color: rgb(255, 255, 255);
+    background-color: darkblue;
+    border-radius: 20px;
+}
+
+.theme {
+    
+    background-color: rgba(0, 255, 234, 0.486);
+    margin: auto;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.c-name {
+    background-color: rgba(0, 0, 0, 0.288);
+
+}
+
+.about-city {
+    background-color: rgb(52, 54, 54);
+    margin: auto;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.grimlight-city {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem ;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 20px;
+}
+
+.void-city {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem ;
+    color: rgb(255, 255, 255);
+    background-color: rgb(94, 96, 97);
+    border-radius: 20px;
+}
+
+.luminal-fracture-city {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem ;
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 134, 224);
+    border-radius: 20px;
+}
+
+.ancient-city {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 2rem 1.5rem ;
+    color: rgb(255, 255, 255);
+    background-color: rgb(85, 185, 107);
+    border-radius: 20px;
+}
+
+
+
 
 /*------------------------- Battle hub syles------------------- */
 
@@ -358,3 +497,20 @@ body {
     text-align: center;
     margin-top: 15px;
 }
+
+#hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 4rem;
+    
+}
+
+.sel-hero-tit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    
+    
+}
+

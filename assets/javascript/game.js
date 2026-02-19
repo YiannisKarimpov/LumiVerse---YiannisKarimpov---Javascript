@@ -2,8 +2,8 @@
 // --------------GLOBAL STATE -------------- //
 
 
-let lives = 3;
-let lumiPoints = 50;
+// let lives = 3;
+// let lumiPoints = 1000;
 let correctStreak = 0;
 let quizStage = 1;
 let battleStage = 1;
@@ -21,27 +21,27 @@ const heroes = {
 
   // LumiSquad Heroes
 
-  Kyaazer:  { team: "LumiSquad", rarity: "Legendary", hp:120, atk:25, def:10, mag: 20  },
-  Inachu:   { team: "LumiSquad", rarity: "Epic",      hp:100, atk:18, def:12, mag: 25  },
-  Noooyer:  { team: "LumiSquad", rarity: "Epic",      hp:95,  atk:20, def:8,  mag: 22  },
-  Jynxie:   { team: "LumiSquad", rarity: "Rare",      hp:85,  atk:16, def:7,  mag: 28  },
-  Velmira:  { team: "LumiSquad", rarity: "Rare",      hp:90,  atk:14, def:10, mag: 30  },
+  Kyaazer:  { team: "LumiSquad",  rarity: "Legendary", hp:120, atk:25, def:10, mag: 20, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/lumi-squad/kyaazer-gallery/kyaazer-original.jpeg" },
+  Inachu:   { team: "LumiSquad",  rarity: "Epic",      hp:100, atk:18, def:12, mag: 25, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/lumi-squad/inachu-gallery/inachu-original.jfif" },
+  Noooyer:  { team: "LumiSquad",  rarity: "Epic",      hp:95,  atk:20, def:8,  mag: 22, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/noyer-gallery/noyer-3.jpeg" },
+  Jynxie:   { team: "LumiSquad",  rarity: "Rare",      hp:85,  atk:16, def:7,  mag: 28, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/jynxie-gallery/jynxie-original.jpeg" },
+  Velmira:  { team: "LumiSquad",  rarity: "Rare",      hp:90,  atk:14, def:10, mag: 30, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/velmira-gallery/velmira-original.jfif" },
  
   // GrimLight Heroes rarity: ""
  
-  Nyxara:   { team: "GrimLight", rarity: "Legendary", hp:115, atk:24, def:12, mag: 18  },
-  Morrix:   { team: "GrimLight", rarity: "Epic",      hp:100, atk:22, def:10, mag: 15  },
-  Seraphyne:{ team: "GrimLight", rarity: "Epic",      hp:95,  atk:19, def:9,  mag: 24  },
-  Pyrakon:  { team: "GrimLight", rarity: "Rare",      hp:110, atk:26, def:8,  mag: 10  },
-  Vael:     { team: "GrimLight", rarity: "Rare",      hp:90,  atk:17, def:14, mag: 12  },
+  Nyxara:   { team: "GrimLight",  rarity: "Legendary", hp:115, atk:24, def:12, mag: 18, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/dark-squad/nyxara-gallery/nyxara-original.jfif" },
+  Morrix:   { team: "GrimLight",  rarity: "Epic",      hp:100, atk:22, def:10, mag: 15, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/dark-squad/morrix-gallery/morrix-original.jfif" },
+  Seraphyne:{ team: "GrimLight",  rarity: "Epic",      hp:95,  atk:19, def:9,  mag: 24, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/seraphyne-gallery/seraphyne-original.jfif" },
+  Pyrakon:  { team: "GrimLight",  rarity: "Rare",      hp:110, atk:26, def:8,  mag: 10, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/pyrakon-gallery/pyrakon-original.jfif" },
+  Vael:     { team: "GrimLight",  rarity: "Rare",      hp:90,  atk:17, def:14, mag: 12, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/vael-gallery/vael-original.jfif" },
  
   // Void Choir Heroes rarity: ""
  
-  Lucerith: { team: "Void Choir",rarity: "Legendary",  hp:125, atk:23, def:13, mag: 22  },
-  Virelle:  { team: "Void Choir",rarity: "Epic",       hp:100, atk:18, def:10, mag: 26  },
-  Erezia:   { team: "Void Choir",rarity: "Epic",       hp:95,  atk:17, def:11, mag: 27  },
-  Khalvex:  { team: "Void Choir",rarity: "Rare",       hp:105, atk:24, def:9,  mag: 14  },
-  Oryn:     { team: "Void Choir",rarity: "Rare",       hp:90,  atk:16, def:12, mag: 25  },
+  Lucerith: { team: "Void Choir", rarity: "Legendary", hp:125, atk:23, def:13, mag: 22, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/void-squad/lucerith-gallery/lucerith-original.jfif" },
+  Virelle:  { team: "Void Choir", rarity: "Epic",      hp:100, atk:18, def:10, mag: 26, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/void-squad/virelle-gallery/virelle-original.jfif" },
+  Erezia:   { team: "Void Choir", rarity: "Epic",      hp:95,  atk:17, def:11, mag: 27, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/erezia-gallery/erezia-original.jfif" },
+  Khalvex:  { team: "Void Choir", rarity: "Rare",      hp:105, atk:24, def:9,  mag: 14, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/khalvex-gallery/khalvex-original.jfif" },
+  Oryn:     { team: "Void Choir", rarity: "Rare",      hp:90,  atk:16, def:12, mag: 25, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/oryn-gallery/oryn-original.jfif" },
 
   
 };
@@ -51,32 +51,29 @@ const heroes = {
 const enemies = {
 // --------------------TIER 1-------------------------------
   weak : [
-  { name: "Void Fragment", hp:85,  atk:16, def:6,  mag: 14 },
-  { name: "Grim Warden",   hp:105, atk:20, def:10, mag: 8 },
-  { name: "Abyss Wisp",    hp:70,  atk:14, def:4,  mag: 20 },
-  { name: "Rift Crawler",  hp:95,  atk:22, def:7,  mag: 6 }
+  { name: "Void Fragment", hp:85,  atk:16, def:6,  mag: 14, image: "assets/images/characters/enemy/void-fragment-mob-original.jfif" },
+  { name: "Grim Warden",   hp:105, atk:20, def:10, mag: 8,  image: "assets/images/characters/enemy/grim-warden.jfif" },
+  { name: "Abyss Wisp",    hp:70,  atk:14, def:4,  mag: 20, image: "assets/images/characters/enemy/abyss-wisp.jfif" },
+  { name: "Rift Crawler",  hp:95,  atk:22, def:7,  mag: 6,  image: "assets/images/characters/enemy/rift-crawler.jfif" }
 ],
 // --------------------TIER 2-------------------------------
  elite: [
-  { name: "Echo Knight",    hp:150,  atk:28, def:18,  mag: 12 },
-  { name: "Null Priestess",  hp:130,  atk:18, def:12,  mag: 32 }
+  { name: "Echo Knight",    hp:150,  atk:28, def:18,  mag: 12,  image: "assets/images/characters/enemy/void-elite.jfif" },
+  { name: "Null Priestess",  hp:130,  atk:18, def:12,  mag: 32, image: "assets/images/characters/enemy/null-priestess.jfif" }
  ],
 // --------------------TIER 3-------------------------------
  commander: [
-  { name: "Dread Overseer",  hp:220,  atk:35, def:22,  mag: 25 }
+  { name: "Dread Overseer",  hp:220,  atk:35, def:22,  mag: 25, image: "assets/images/characters/enemy/dread-overseer.jfif" }
  ],
 // --------------------TIER 4-------------------------------
  boss: [
-  { name: "Oblivion Herald",  hp:350,  atk:48, def:30,  mag: 45 }
+  { name: "Oblivion Herald",  hp:350,  atk:48, def:30,  mag: 45, image: "assets/images/characters/enemy/oblivion-herald.jfif" }
  ]
 };
 // ----------------------------END----------------------------
 
 let player;
 let enemy;
-
-// enemy.hp += stage * 20;
-// enemy.atk += stage * 5;
 
 
 // -----------------
@@ -97,7 +94,7 @@ let currentQuestion = null;
 const gameState = {
     mode: "quiz",
     lives: 3,
-    lumiPoints: 50,
+    lumiPoints: 1000,
     correctStreak: 0,
     correctAnswer: 0,
     questionsLeft: 10
@@ -115,9 +112,9 @@ function updateHUD() {
     document.getElementById("lumiPoints").textContent = gameState.lumiPoints;
     document.getElementById("streak-points").textContent = gameState.correctStreak;
     document.getElementById("correct-answers").textContent = gameState.correctAnswer;
-    document.getElementById("question-number").textContent = gameState.questionNumber;
-    document.getElementById("difficulty-mode").textContent = gameState.difficulty;
-    document.getElementById("stage-number").textContent = showQuizStageIntro[quizStage];
+    // document.getElementById("question-number").textContent = gameState.questionNumber;
+    // document.getElementById("difficulty-mode").textContent = gameState.difficulty;
+    // document.getElementById("stage-number").textContent = showQuizStageIntro[quizStage];
 
 
 
@@ -130,11 +127,11 @@ function updateHUD() {
 // ------------------END OF UI---------------------//
 
 
- const showQuizStageIntro = {
-    1: "Stage 1 Foundations of Light🌇",
-    2: "Stage 2 Shadows Rising🌑",
-    3: "Stage 3 Echoes of the Void🌌" 
-  };
+//  const showQuizStageIntro = {
+//     1: "Stage 1 Foundations of Light🌇",
+//     2: "Stage 2 Shadows Rising🌑",
+//     3: "Stage 3 Echoes of the Void🌌" 
+//   };
 
 
   
@@ -165,8 +162,28 @@ document.getElementById("start-quiz").addEventListener("click", () => {
       
 
       updateHUD();
+      document.getElementById("quiz").style.display= "block";
+  document.getElementById("hero-selection").style.display= "none";
+  document.getElementById("battle").style.display= "none";
       startStage();
     });
+
+document.getElementById("start-battle").addEventListener("click", () => {
+  battleStage = 1;
+  gameState.lives = 3;
+  gameState.correctAnswer = 0; 
+  gameState.correctStreak = 0; 
+  gameState.questionsLeft = 10;
+  gameState.lumiPoints = 1000;
+
+  updateHUD();
+  document.getElementById("quiz").style.display= "none";
+  document.getElementById("hero-selection").style.display= "block";
+  document.getElementById("battle").style.display= "none";
+
+  renderHeroSelection();
+  
+});
 
 // document.getElementById("start-quiz-nav").addEventListener("click", ()=> {
 //   startStage("stage1");
@@ -195,7 +212,7 @@ document.getElementById("start-quiz").addEventListener("click", () => {
 
 
 
-// ---------------QUESTIONS POOL---------------- //
+// ---------------QUIZ QUESTIONS POOL---------------- //
 
 let quizData = {
     quizStage1: [
@@ -599,7 +616,7 @@ let quizData = {
 }
 
 
-// --------------- STAGE FUNCTIONS --------------- //
+// ---------------QUIZ STAGE FUNCTIONS --------------- //
 
 
 
@@ -613,24 +630,6 @@ function getStageQuestions(quizStageKey, count) {
   return shuffleQuestions([...quizData[quizStageKey]]).slice(0, count);
 }
  
-
-//----------- original b4 modfi------------
-
-
-// function startStage(stageKey) {
-
-//   console.log("stageKey:", stageKey);
-//   console.log("quizData[stageKey]:", quizData[stageKey]);
-  
-//     currentStageQuestions = getStageQuestions(stageKey, 10);
-//     currentQuestionIndex = 0;
-//     showQuestion();
-// }
-// ---------------------------------------------
-
-//------------------ attempt 1------------------------
-
-
 
 function startStage() {
   const quizStageKey = `quizStage${quizStage}`;
@@ -669,16 +668,12 @@ function endQuiz() {
 
   renderHeroSelection();
 
-
-
-
-
-  // startBattle();
 }
-
+// -----------------BATTLE FUNCTIONS-------------------------
 function renderHeroSelection() {
   const heroList = document.getElementById("hero-list");
   heroList.innerHTML = "";
+  
 
   Object.keys(heroes).forEach(heroName => {
     const hero = heroes[heroName];
@@ -691,13 +686,37 @@ function renderHeroSelection() {
     Team: ${hero.team}<br>
     Rarity: ${hero.rarity}<br>
     HP: ${hero.hp} | ATK:${hero.atk}| DEF:${hero.def} | MAG:${hero.mag}
+    <img src="${hero.image}" class="hero-img"> 
     `;
 
-    btn.onclick = () => selectHero(heroName);
+    if (!hero.unlocked) {
+      btn.disabled = true;
+      btn.innerHTML += `<br><span style="color:red;">🔒 Locked</span>`;
+    } else {
+      btn.onclick = () => selectHero(heroName);
+    }
+
 
     heroList.appendChild(btn);
 
   });
+}
+
+function checkHeroUnlocks() {
+
+  Object.keys(heroes).forEach(heroName => {
+    const hero = heroes[heroName];
+
+    if (hero.rarity === "Epic" && gameState.correctAnswer >= 15){
+      hero.unlocked = true;
+  
+    }
+
+    if (hero.rarity === "Legendary" && gameState.correctAnswer >= 30) {
+      hero.unlocked = true;
+      
+    }
+    });
 }
 
 
@@ -711,18 +730,6 @@ function selectHero(heroName) {
 
   startBattle();
 }
-
-// ------------end of attempt----------
-
-
-
-
-
-
-
-    // const stage1Questions = getStageQuestions("stage1", 10);
-    // const stage2Questions = getStageQuestions("stage2", 10);
-    // const stage3Questions = getStageQuestions("stage3", 10);
 
 
     // ---------QUESTION FUNCTIONS----------//
@@ -766,15 +773,6 @@ function nextQuestion() {
     }, 1000);
 
     
-// loseQuestionsLeft();
-//     updateHUD();
-//     return;
-
-
-// //  new line
-//     completeStage();
-// // end new line
-//     return;
   }
 
   showQuestion();
@@ -795,6 +793,9 @@ function RedQuestionsLeft() {
 // ------------------Battle functions-----------------
 
 function startBattle() {
+  document.getElementById("attack-btn").disabled = false;
+  document.getElementById("magic-btn").disabled = false;
+ 
   document.getElementById("battle-log").innerHTML = "";
 
   const enemyTemplate = getEnemyByStage(battleStage);
@@ -804,18 +805,30 @@ function startBattle() {
     return;
   }
 
+  const scale = 1 + (battleStage * 0.08);
 
+  enemy = { 
+     ...enemyTemplate,
+     hp: Math.floor(enemyTemplate.hp * scale),
+     atk: Math.floor(enemyTemplate.atk * scale),
+     def: Math.floor(enemyTemplate.def * scale),
+     mag: Math.floor(enemyTemplate.mag * scale)
+  };
 
-
-  enemy = { ...enemyTemplate };
   enemy.maxHp = enemy.hp;
 
+  
   document.getElementById("player-name").textContent = player.name;
   document.getElementById("enemy-name").textContent = enemy.name;
-
+  document.getElementById("player-image").src = player.image;
+  document.getElementById("enemy-image").src = enemy.image;
+  
   updateBattleUI();
 
 }
+
+
+
 
 
 function updateBattleUI() {
@@ -827,7 +840,36 @@ function updateBattleUI() {
 
   document.getElementById("enemy-hp-bar").style.width = 
   (enemy.hp / enemy.maxHp) * 100 + "%";
+  
+  document.getElementById("player-atk").textContent = player.atk;
+  document.getElementById("player-mag").textContent = player.mag;
+  document.getElementById("player-def").textContent = player.def;
+
+
+  document.getElementById("enemy-atk").textContent = enemy.atk;
+  document.getElementById("enemy-def").textContent = enemy.def;
+  document.getElementById("enemy-mag").textContent = enemy.mag;
+
+  
+
+  const nameEl = document.getElementById("player-name");
+  nameEl.textContent = player.name
+
+  if (player.rarity === "Legendary") nameEl.style.color = "gold";
+  if (player.rarity === "Epic") nameEl.style.color = "purple";
+  if (player.rarity === "Rare") nameEl.style.color = "deepskyblue";
+
+
+  document.getElementById("enemy-name").style.color =
+    battleStage >= 9 ? "red" :
+    battleStage >= 7 ? "orange" :
+    battleStage >= 5 ? "purple" :
+    "white";
 }
+
+
+
+
 
 function calculateDamage(attacker, defender, isMagic = false) {
   if (!attacker || !defender) {
@@ -837,19 +879,26 @@ function calculateDamage(attacker, defender, isMagic = false) {
   let base = isMagic ? attacker.mag : attacker.atk;
   let defence = defender.def;
   
-  let damage = base - defence * 0.5;
+  let damage = base * (100 / (100 + defence));
   
-  damage += Math.floor(Math.random() * 6);
+  damage += Math.floor(Math.random() * 5);
   
-  // was on top globally
-    let crit = Math.random() < 0.1;
-  if (crit) damage *= 2;
-  if (crit) addBattleLog("CRITICAL HIT!");
-  // ---------end-------------------
 
 
-  return Math.max(5, Math.floor(damage));
+  if (Math.random() < (attacker.critChance || 0.05)) {
+    damage *= (attacker.critDamage || 1.5);
+    damage = Math.floor(damage);
+    addBattleLog("CRITICAL HIT");
+  }
+
+
+
+  return Math.max(1, Math.floor(damage));
 }
+
+
+
+
 
 document.getElementById("attack-btn").onclick = function () {
   playerTurn(false);
@@ -857,6 +906,10 @@ document.getElementById("attack-btn").onclick = function () {
 document.getElementById("magic-btn").onclick = function () {
   playerTurn(true);
 };
+
+
+
+
 
 function addBattleLog(message) {
   const log = document.getElementById("battle-log");
@@ -869,24 +922,42 @@ function addBattleLog(message) {
   // player.hp = Math.min(player.hp + 20, player.maxHp); --healing----
 }
 
+
+
+
+
+
 function playerTurn(isMagic) {
 
   const damage = calculateDamage(player, enemy, isMagic);
   enemy.hp -= damage;
 
+  if (enemy.hp <0) enemy.hp = 0;
+
   addBattleLog(`${player.name} dealt ${damage} damage to ${enemy.name}`);
+
+  if (player.lifesteal > 0) {
+    const heal = Math.floor(damage * player.lifesteal);
+    player.hp = Math.min(player.hp + heal, player.maxHp);
+    addBattleLog(`${player.name} healed ${heal} HP`);
+  }
+  
 
   if (enemy.hp <= 0) {
     addBattleLog(`${enemy.name} was defeated!`);
+
+    player.hp += Math.floor(player.maxHp * 0.15);
+    player.hp = Math.min(player.hp, player.maxHp);
 
     gameState.lumiPoints +=50;
     updateHUD();
 
     battleStage++;
+    setTimeout(openStore, 1000);
 
-    setTimeout(() => {
-      startBattle();
-    }, 1000);
+    // setTimeout(() => {
+    //   startBattle();
+    // }, 1000);
 
     return;
   }
@@ -896,43 +967,179 @@ function playerTurn(isMagic) {
   setTimeout(enemyTurn, 600);
 }
 
+
+
+
+
+
+
+
 function enemyTurn() {
+
+  if (Math.random() < player.dodgeChance) {
+    addBattleLog(`${player.name} dodged the attack!`);
+    return;
+  }
 
   const damage = calculateDamage(enemy, player, false);
   player.hp -= damage;
 
-  addBattleLog(`${enemy.name} hit ${player.name} for ${damage}`);
+  if (player.hp < 0) player.hp = 0;
+
+  
+  addBattleLog(`${enemy.name} dealt ${damage} damage to ${player.name}`);
+
+  updateBattleUI();
 
   if (player.hp <= 0 ) {
     addBattleLog("You were defeated...");
+    document.getElementById("attack-btn").disabled = true;
+    document.getElementById("magic-btn").disabled = true;
+    setTimeout(gameOverBattle, 1000);
     return;
   }
-
-  updateBattleUI();
 }
+
+function backToBattle() {
+  document.getElementById("store").style.display = "none";
+  document.getElementById("battle").style.display = "block";
+
+  startBattle();
+  
+}
+
+
+
+
+
+
+
+
 
 function attack() {
   playerTurn(false);
 }
 
+
+
+
+
+
 function getEnemyByStage(stageNumber) {
 
-  if (stageNumber <= 2)
+  if (stageNumber % 10 === 0)
+     return randomFrom(enemies.boss);
+
+  if (stageNumber % 5 === 0)
+     return randomFrom(enemies.commander);
+
+  if (stageNumber > 5)
+    return randomFrom([...enemies.weak, ...enemies.elite]);
+
      return randomFrom(enemies.weak);
-
-  if (stageNumber <= 4)
-     return randomFrom([...enemies.weak, ...enemies.elite]);
-
-  if (stageNumber ===  5)
-    return randomFrom([...enemies.commander]);
-
-     return randomFrom(enemies.elite);
 }
 
 function randomFrom(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+
+
+
+
+function gameOverBattle() {
+  alert("Defetead... Return to Hero Selection");
+
+  battleStage = 1;
+
+  document.getElementById("battle").style.display = "none";
+  document.getElementById("hero-selection").style.display = "block";
+}
+//----------------------- game store----------------------
+function openStore() {
+  document.getElementById("battle").style.display = "none";
+  document.getElementById("store").style.display = "block";
+
+  document.getElementById("store-lp").textContent = gameState.lumiPoints;
+
+  document.getElementById("store-hp").textContent = player.hp + " / " + player.maxHp;
+  document.getElementById("store-atk").textContent = player.atk;
+  document.getElementById("store-mag").textContent = player.mag;
+  document.getElementById("store-def").textContent = player.def;
+
+}
+
+
+
+
+
+
+function buyItem(item) {
+
+  const costs = {
+    hpPotion: 50,
+    maxHp: 200,
+    atk: 200,
+    mag: 200,
+    def: 200,
+    crit: 200,
+    dodge: 200,
+    lifesteal: 200
+  };
+
+  const cost = costs[item];
+
+  if (gameState.lumiPoints < cost) {
+    alert("Not Enough Lumi Points");
+    return;
+  }
+
+  gameState.lumiPoints -= cost;
+
+  switch(item) {
+    case "hpPotion":
+      player.hp = Math.min(player.hp + 30, player.maxHp);
+      break;
+
+    case "maxHp":
+      player.maxHp += 20;
+      player.hp += 20;
+      break;
+
+    case "atk" :
+      player.atk += 5;
+      break;
+
+    case "mag" :
+      player.mag += 5;
+      break;
+
+    case "def" :
+      player.def += 5;
+      break;
+
+    case "crit" :
+      player.critChance += 0.02;
+      break;
+
+    case "dodge" :
+      player.dodgeChance += 0.02;
+      break;
+
+    case "lifesteal" :
+      player.lifesteal += 0.02;
+      break;
+    
+    
+
+  }
+
+  updateHUD();
+  document.getElementById("store-lp").textContent = gameState.lumiPoints;
+  openStore();
+
+
+}
 
 // ----------------------end--------------------
  
@@ -961,11 +1168,10 @@ function addCorrectAnswer() {
 function correctAnswer() {
   console.log("correct answer ruuninng");
     gameState.correctStreak++;
-    // if (gameState.correctAnswer >= 15) unlockEpicHero();
-    // if (gameState.correctAnswer === 30) unlockLegenaryHero();
     addCorrectAnswer();
     addLP(10);
     extraLife();
+    checkHeroUnlocks();
     updateHUD();
 }
 
