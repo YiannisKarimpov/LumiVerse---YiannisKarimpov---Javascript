@@ -1121,6 +1121,11 @@
     flex-wrap: wrap;
 }
 
+.social-media-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
