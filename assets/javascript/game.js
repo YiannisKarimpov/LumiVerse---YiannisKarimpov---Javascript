@@ -21,27 +21,27 @@ const heroes = {
 
   // LumiSquad Heroes
 
-  Kyaazer:  { team: "LumiSquad",  rarity: "Legendary", hp:120, atk:25, def:10, mag: 20, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/lumi-squad/kyaazer-gallery/kyaazer-original.jpeg" },
-  Inachu:   { team: "LumiSquad",  rarity: "Epic",      hp:100, atk:18, def:12, mag: 25, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/lumi-squad/inachu-gallery/inachu-original.jfif" },
-  Noooyer:  { team: "LumiSquad",  rarity: "Epic",      hp:95,  atk:20, def:8,  mag: 22, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/noyer-gallery/noyer-3.jpeg" },
-  Jynxie:   { team: "LumiSquad",  rarity: "Rare",      hp:85,  atk:16, def:7,  mag: 28, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/jynxie-gallery/jynxie-original.jpeg" },
-  Velmira:  { team: "LumiSquad",  rarity: "Rare",      hp:90,  atk:14, def:10, mag: 30, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/velmira-gallery/velmira-original.jfif" },
+  Kyaazer:  { team: "LumiSquad",  rarity: "Legendary", hp:170, atk:35, def:20, mag: 30, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/lumi-squad/kyaazer-gallery/kyaazer-original.jpeg" },
+  Inachu:   { team: "LumiSquad",  rarity: "Epic",      hp:150, atk:23, def:18, mag: 32, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/lumi-squad/inachu-gallery/inachu-original.jfif" },
+  Noooyer:  { team: "LumiSquad",  rarity: "Epic",      hp:145,  atk:25, def:13,  mag: 27, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/noyer-gallery/noyer-3.jpeg" },
+  Jynxie:   { team: "LumiSquad",  rarity: "Rare",      hp:145,  atk:21, def:7,  mag: 33, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/jynxie-gallery/jynxie-original.jpeg" },
+  Velmira:  { team: "LumiSquad",  rarity: "Rare",      hp:140,  atk:19, def:18, mag: 33, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/lumi-squad/velmira-gallery/velmira-original.jfif" },
  
   // GrimLight Heroes rarity: ""
  
-  Nyxara:   { team: "GrimLight",  rarity: "Legendary", hp:115, atk:24, def:12, mag: 18, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/dark-squad/nyxara-gallery/nyxara-original.jfif" },
-  Morrix:   { team: "GrimLight",  rarity: "Epic",      hp:100, atk:22, def:10, mag: 15, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/dark-squad/morrix-gallery/morrix-original.jfif" },
-  Seraphyne:{ team: "GrimLight",  rarity: "Epic",      hp:95,  atk:19, def:9,  mag: 24, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/seraphyne-gallery/seraphyne-original.jfif" },
-  Pyrakon:  { team: "GrimLight",  rarity: "Rare",      hp:110, atk:26, def:8,  mag: 10, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/pyrakon-gallery/pyrakon-original.jfif" },
-  Vael:     { team: "GrimLight",  rarity: "Rare",      hp:90,  atk:17, def:14, mag: 12, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/vael-gallery/vael-original.jfif" },
+  Nyxara:   { team: "GrimLight",  rarity: "Legendary", hp:165, atk:24, def:12, mag: 18, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/dark-squad/nyxara-gallery/nyxara-original.jfif" },
+  Morrix:   { team: "GrimLight",  rarity: "Epic",      hp:150, atk:22, def:10, mag: 15, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/dark-squad/morrix-gallery/morrix-original.jfif" },
+  Seraphyne:{ team: "GrimLight",  rarity: "Epic",      hp:145,  atk:19, def:9,  mag: 24, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/seraphyne-gallery/seraphyne-original.jfif" },
+  Pyrakon:  { team: "GrimLight",  rarity: "Rare",      hp:160, atk:26, def:8,  mag: 10, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/pyrakon-gallery/pyrakon-original.jfif" },
+  Vael:     { team: "GrimLight",  rarity: "Rare",      hp:140,  atk:17, def:14, mag: 12, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/dark-squad/vael-gallery/vael-original.jfif" },
  
   // Void Choir Heroes rarity: ""
  
-  Lucerith: { team: "Void Choir", rarity: "Legendary", hp:125, atk:23, def:13, mag: 22, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/void-squad/lucerith-gallery/lucerith-original.jfif" },
-  Virelle:  { team: "Void Choir", rarity: "Epic",      hp:100, atk:18, def:10, mag: 26, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/void-squad/virelle-gallery/virelle-original.jfif" },
-  Erezia:   { team: "Void Choir", rarity: "Epic",      hp:95,  atk:17, def:11, mag: 27, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/erezia-gallery/erezia-original.jfif" },
-  Khalvex:  { team: "Void Choir", rarity: "Rare",      hp:105, atk:24, def:9,  mag: 14, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/khalvex-gallery/khalvex-original.jfif" },
-  Oryn:     { team: "Void Choir", rarity: "Rare",      hp:90,  atk:16, def:12, mag: 25, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/oryn-gallery/oryn-original.jfif" },
+  Lucerith: { team: "Void Choir", rarity: "Legendary", hp:165, atk:34, def:22, mag: 29, critChance:0.10, critDamage:1.8, dodgeChance: 0.05, lifesteal: 0.05, unlocked: false, image: "assets/images/characters/void-squad/lucerith-gallery/lucerith-original.jfif" },
+  Virelle:  { team: "Void Choir", rarity: "Epic",      hp:150, atk:23, def:17, mag: 32, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: false, image: "assets/images/characters/void-squad/virelle-gallery/virelle-original.jfif" },
+  Erezia:   { team: "Void Choir", rarity: "Epic",      hp:145,  atk:25, def:20, mag: 29, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/erezia-gallery/erezia-original.jfif" },
+  Khalvex:  { team: "Void Choir", rarity: "Rare",      hp:155, atk:24, def:15,  mag: 24, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/khalvex-gallery/khalvex-original.jfif" },
+  Oryn:     { team: "Void Choir", rarity: "Rare",      hp:140,  atk:20, def:17, mag: 29, critChance:0.05, critDamage:1.5, dodgeChance: 0.03, lifesteal: 0,    unlocked: true,  image: "assets/images/characters/void-squad/oryn-gallery/oryn-original.jfif" },
 
   
 };
@@ -51,10 +51,10 @@ const heroes = {
 const enemies = {
 // --------------------TIER 1-------------------------------
   weak : [
-  { name: "Void Fragment", hp:85,  atk:16, def:6,  mag: 14, image: "assets/images/characters/enemy/void-fragment-mob-original.jfif" },
-  { name: "Grim Warden",   hp:105, atk:20, def:10, mag: 8,  image: "assets/images/characters/enemy/grim-warden.jfif" },
-  { name: "Abyss Wisp",    hp:70,  atk:14, def:4,  mag: 20, image: "assets/images/characters/enemy/abyss-wisp.jfif" },
-  { name: "Rift Crawler",  hp:95,  atk:22, def:7,  mag: 6,  image: "assets/images/characters/enemy/rift-crawler.jfif" }
+  { name: "Void Fragment", hp:65,  atk:12, def:6,  mag: 10, image: "assets/images/characters/enemy/void-fragment-mob-original.jfif" },
+  { name: "Grim Warden",   hp:85, atk:16, def:10, mag: 6,  image: "assets/images/characters/enemy/grim-warden.jfif" },
+  { name: "Abyss Wisp",    hp:50,  atk:14, def:4,  mag: 12, image: "assets/images/characters/enemy/abyss-wisp.jfif" },
+  { name: "Rift Crawler",  hp:75,  atk:15, def:7,  mag: 4,  image: "assets/images/characters/enemy/rift-crawler.jfif" }
 ],
 // --------------------TIER 2-------------------------------
  elite: [
@@ -63,11 +63,11 @@ const enemies = {
  ],
 // --------------------TIER 3-------------------------------
  commander: [
-  { name: "Dread Overseer",  hp:220,  atk:35, def:22,  mag: 25, image: "assets/images/characters/enemy/dread-overseer.jfif" }
+  { name: "Dread Overseer",  hp:200,  atk:25, def:18,  mag: 20, image: "assets/images/characters/enemy/dread-overseer.jfif" }
  ],
 // --------------------TIER 4-------------------------------
  boss: [
-  { name: "Oblivion Herald",  hp:350,  atk:48, def:30,  mag: 45, image: "assets/images/characters/enemy/oblivion-herald.jfif" }
+  { name: "Oblivion Herald",  hp:300,  atk:48, def:30,  mag: 45, image: "assets/images/characters/enemy/oblivion-herald.jfif" }
  ]
 };
 // ----------------------------END----------------------------
@@ -805,7 +805,7 @@ function startBattle() {
     return;
   }
 
-  const scale = 1 + (battleStage * 0.08);
+  const scale = 1 + (battleStage * 0.05);
 
   enemy = { 
      ...enemyTemplate,
@@ -1078,13 +1078,13 @@ function buyItem(item) {
 
   const costs = {
     hpPotion: 50,
-    maxHp: 200,
-    atk: 200,
-    mag: 200,
-    def: 200,
-    crit: 200,
-    dodge: 200,
-    lifesteal: 200
+    maxHp: 100,
+    atk: 100,
+    mag: 100,
+    def: 100,
+    crit: 100,
+    dodge: 100,
+    lifesteal: 100
   };
 
   const cost = costs[item];
